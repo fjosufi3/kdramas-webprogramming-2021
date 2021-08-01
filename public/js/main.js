@@ -56,17 +56,6 @@ const selectRandomPreview = (previews) => {
     resultBox.innerHTML = previews[random].innerHTML;
 }
 
-for(var i = 0; i < popularShowNames.length; i++) {
-    var preview = document.createElement('a');
-    var image = document.createElement('img');
-    var text = document.createTextNode(popularShowNames[i]);
-    image.src = popularShowImages[i];
-
-    preview.appendChild(image);
-    preview.appendChild(text);
-    popularShowsContainer.appendChild(preview);
-}
-
 function populateContainer(names, images, container) {
     container.innerHTML = "";
     for(var i = 0; i < names.length; i++) {
@@ -75,6 +64,7 @@ function populateContainer(names, images, container) {
         var text = document.createTextNode(names[i]);
         image.src = images[i];
 
+        preview.classList.add('preview');
         preview.appendChild(image);
         preview.appendChild(text);
         container.appendChild(preview);
